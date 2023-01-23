@@ -1,0 +1,38 @@
+.gitHub-icon {
+    width: 2.7vw;
+    height:2.7vw;
+    background-color: #1500ff;
+}
+
+.linkedIn-icon {
+    width: 2.7vw;
+    height:2.7vw;
+}
+
+.icons {
+    background-color: transparent;
+    border-radius: 0.5rem;
+    padding: 0.3vw;
+    margin: 0.2vw;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.icon {
+    border-radius: 50%;
+}
+
+.icon:hover {
+    box-shadow: 0 0.2rem 0.1rem #1500ff;
+    transform: translateY(-0.1rem);
+}
+
+.icon:active {
+  background-color: #1500ff;
+  box-shadow: 0 0.2rem 0.1rem #1500ff;
+  transform: translateY(0.15rem);
+}

@@ -1,0 +1,187 @@
+.node {
+    border: 0.5px solid black;
+    border-radius: 0px;
+    background-color: #3b394a;
+    margin: 0px;
+   
+    position: relative;
+    display: flex;
+    
+    width: 2.2vw;
+    height: 2.2vw;
+
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.node:hover {
+    transform: scale(1.1);
+    border-radius: 20%;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.node:active {
+    transform: scale(0.93);
+}
+
+.node-end {
+    z-index: 3;
+    background-color: #1500ff;
+    animation: float 3s ease-in-out infinite;
+}
+  
+.node-start {
+background-color: #158f4c;
+z-index: 3;
+animation: float 3s ease-in-out infinite;
+}
+
+.node-current {
+    background-color: #d1085f;
+}
+
+.node-wall {
+    background-color: #020011;  
+}
+
+.node-considered {
+    z-index: 1;
+    background-color: #5f19a1;
+    animation-name: consideredAnimation;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+.node-path {
+    z-index: 2;
+
+    animation-name: pathAnimation;
+    animation-duration: 1.5s;
+    animation-timing-function:ease-out;
+    animation-delay: 0s;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+.node-visited {
+    z-index: 1;
+    background-color: #4e00cd;
+    animation-name: visitedAnimation;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+  }
+
+.node-weight {
+    opacity: 0.9;
+    background-color: darkorange;
+}
+  
+  @keyframes visitedAnimation {
+    0% {
+      transform: scale(0.25);
+      opacity: 0.25;
+      border-radius: 100%;
+    }
+  
+    25% {
+        transform: scale(0.4);
+        opacity: 0.4;
+    }
+  
+    50% {
+        transform: scale(0.6);
+        opacity: 0.6;
+    }
+  
+    75% {
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+  }
+  
+  @keyframes consideredAnimation {
+    0% {
+      transform: scale(0.1);
+      opacity: 0.1;
+      border-radius: 100%;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+  }
+  
+  @keyframes pathAnimation {
+    0% {
+        background-color: #5f2c8f;
+        transform: scale(0.1);
+        opacity: 0.1;
+        border-radius: 100%;
+    }
+    100% {
+        background-color: #ff006f;
+        transform: scale(1);
+        opacity: 1;
+    }
+  }
+
+  @keyframes startAnimation {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-15px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+        
+        
+		transform: translatey(0px);
+	}
+  }
+
+@keyframes bounce {
+    0%   { transform: scale(1,1)      translateY(0); }
+    10%  { transform: scale(1.2,.9)   translateY(0); }
+    50%  { transform: scale(.9,1.1)   translateY(-15px); }
+    65%  { transform: scale(1.05,.95) translateY(0); }
+    70%  { transform: scale(1,1)      translateY(-7px); }
+    80%  { transform: scale(1,1)      translateY(0); }
+    100% { transform: scale(1,1)      translateY(0); }
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.8);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-10px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.8);
+		transform: translatey(0px);
+	}
+}
